@@ -48,7 +48,7 @@ Out of the box this hook requires Cordova 3.3.1-0.4.2 and above but it can work 
 ## Original Work:
 * [Ross Martin](https://github.com/rossmartin/cordova-uglify)
 * [Alastair Paragas](https://github.com/alastairparagas/cordova-minify)
-* [adamerny] (https://github.com/adamerny/cordova-minify-v2)
+* [adamerny](https://github.com/adamerny/cordova-minify-v2)
 
 ## License
 [MIT](https://github.com/yeejfe/cordova-minify-obfuscate/blob/master/LICENSE)
