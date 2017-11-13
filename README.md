@@ -7,7 +7,7 @@ This DOES NOT compress the assets in your www folder, but rather, on your respec
 ## Install
 Install this package inside of your app's root folder with this command.
 ```
-npm install cordova-minify-obfuscate --save-dev
+npm install git+https://github.com/yeejfe/cordova-minify-obfuscate --save-dev
 ```
 The `--save-dev` flag is important! If you decide to work on another environment, cordova-minify cannot run without the original package and its dependencies! After install, an `after_prepare` folder will be added to your `hooks` folder with the `cordova-minify-obfuscate.js` script in it.
 
