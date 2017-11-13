@@ -10,8 +10,8 @@
     "hook",
     "hooks",
     "cordova-minify",
-    "cordova-minify-v2"
-	"cordova-minify-obfuscate"
+    "cordova-minify-v2",
+    "cordova-minify-obfuscate"
   ],
   "dependencies" : {
     "clean-css": "4.1.x",
