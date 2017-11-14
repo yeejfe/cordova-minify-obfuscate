@@ -25,12 +25,29 @@ var fs = require('fs'),
     htmlOptions = {
         removeAttributeQuotes: true,
         removeComments: true,
-        minifyJS: true,
+        minifyJS: jsOptions,
         minifyCSS: cssOptions,
         collapseWhitespace: true,
         conservativeCollapse: true,
         removeComments: true,
         removeEmptyAttributes: true
+    },
+	jsOptions = {
+		compress: {
+			booleans: true,
+			dead_code: true,
+			loops: true,
+			if_return: true,
+			keep_fargs: true,
+			keep_fnames: false
+		},
+		mangle: {
+			toplevel: true
+		},
+		nameCache: null, // or specify a name cache object
+		toplevel: false,
+		ie8: false,
+		warnings: false,
     },
 
     successCounter = 0,
@@ -74,24 +91,7 @@ function compress(file, dir) {
     switch(ext.toLowerCase()) {
         case '.js':
             (debug) && console.log('Compressing/Uglifying JS File: ' + file);
-            var result = UglifyJS.minify(file, {
-
-                compress: {
-					booleans: true,
-                    dead_code: true,
-                    loops: true,
-                    if_return: true,
-                    keep_fargs: true,
-                    keep_fnames: false
-                },
-				output: {
-					// output options
-				},
-				nameCache: null, // or specify a name cache object
-				toplevel: false,
-				ie8: false,
-				warnings: false,
-            });
+            var result = UglifyJS.minify(file, jsOptions);
             if (!result || !result.code || result.code.length == 0) {
                 errorCounter++;
                 console.error('\x1b[31mEncountered an error minifying a file: %s\x1b[0m', file);
