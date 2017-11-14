@@ -25,7 +25,7 @@ var fs = require('fs'),
     htmlOptions = {
         removeAttributeQuotes: true,
         removeComments: true,
-        minifyJS: jsOptions,
+        minifyJS: {true,jsOptions,},
         minifyCSS: cssOptions,
         collapseWhitespace: true,
         conservativeCollapse: true,
