@@ -25,7 +25,7 @@ var fs = require('fs'),
     htmlOptions = {
         removeAttributeQuotes: true,
         removeComments: true,
-        minifyJS: {true,jsOptions,},
+        minifyJS: true,
         minifyCSS: cssOptions,
         collapseWhitespace: true,
         conservativeCollapse: true,
@@ -47,7 +47,7 @@ var fs = require('fs'),
 		nameCache: null, // or specify a name cache object
 		toplevel: false,
 		ie8: false,
-		warnings: false,
+		warnings: false
     },
 
     successCounter = 0,
