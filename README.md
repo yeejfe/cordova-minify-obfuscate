@@ -16,6 +16,8 @@ Once you have this hook installed it will compress your app's JavaScript and CSS
 
 By default the hook will uglify the JavaScript, CSS, HTML, and images in the `<platform>` `www/js`, `www/css`, `www/img`, `www/javascript`, `www/style`, `www/html`, and `www/media` folders of your project recursively (If they exist) as well as the top-level `www` folder (not recursively) to account for minifying the index.html and any other files that may reside there.
 
+Obfuscation would be done to the JavaScript files.
+
 [Take a look at this line in the hook to add more folders to be minified - optional](https://github.com/yeejfe/cordova-minify-obfuscate/blob/master/after_prepare/cordova-minify-obfuscate.js#l221).
 
 You can configure the hook to uglify/minify only for a release build, [see here](https://github.com/yeejfe/cordova-minify-obfuscate/blob/master/after_prepare/cordova-minify-obfuscate.js#l43).
@@ -33,6 +35,7 @@ CSS minification options [can be changed here](https://github.com/yeejfe/cordova
 Out of the box this hook requires Cordova 3.3.1-0.4.2 and above but it can work with versions 3.0.0 thru 3.3.0 if you manually indicate the path for the platforms directories on Android and iOS [see here](https://github.com/yeejfe/cordova-minify-obfuscate/blob/master/after_prepare/cordova-minify-obfuscate.js#l18).  This is because the `CORDOVA_PLATFORMS` environment variable was not added until version 3.3.1-0.4.2 ([see this post by Dan Moore](http://www.mooreds.com/wordpress/archives/1425)).
 
 ## Dependencies:
+* [javascript-obfuscator](https://www.npmjs.com/package/javascript-obfuscator)
 * [uglify-js](https://github.com/mishoo/UglifyJS2)
 * [clean-css](https://github.com/jakubpawlowicz/clean-css)
 * [imagemin](https://github.com/imagemin/imagemin) (**not** image-min)
