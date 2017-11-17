@@ -1,6 +1,6 @@
 # cordova-minify-obfuscate
 
-Cordova hook that uglifies and minifies your app's Javascript, CSS and HTML files, as well as compresses your image files. It is a modification of the work of [Ross Martin's original cordova-uglify](https://github.com/rossmartin/cordova-uglify), [Alastair Paragas' modified version](https://github.com/alastairparagas/cordova-minify) and [adamerny' modified version](https://github.com/adamerny/cordova-minify-v2), with the added default parsing of your top-level app folder `www` as well as minifying of HTML files.
+Cordova hook that uglifies and minifies your app's Javascript, CSS and HTML files, as well as compresses your image files. It is a modification of the work of [Ross Martin's original cordova-uglify](https://github.com/rossmartin/cordova-uglify), [Alastair Paragas' modified version](https://github.com/alastairparagas/cordova-minify), [adamerny' modified version](https://github.com/adamerny/cordova-minify-v2) and [Timofey Kachalov's Javascript-obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) with the added default parsing of your top-level app folder `www` as well as minifying of HTML files.
 
 This DOES NOT compress the assets in your www folder, but rather, on your respective platform's www folders, so your development environment isn't touched, and your apps stay fast and slim!
 

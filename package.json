@@ -11,7 +11,8 @@
     "hooks",
     "cordova-minify",
     "cordova-minify-v2",
-    "cordova-minify-obfuscate"
+    "cordova-minify-obfuscate",
+	"javascript-obfuscator"
   ],
   "dependencies" : {
     "clean-css": "4.1.x",
@@ -21,7 +22,8 @@
     "imagemin-jpegtran": "5.0.x",
     "imagemin-optipng": "5.2.x",
     "imagemin-svgo": "6.0.x",
-    "uglify-js": "3.1.x"
+    "uglify-js": "3.1.x",
+	"javascript-obfuscator": "0.12.*"
   },
   "author": "yeejfe",
   "license": "MIT",

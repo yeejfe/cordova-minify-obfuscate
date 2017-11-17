@@ -14,6 +14,7 @@ var fs = require('fs'),
         keepSpecialComments: 0
     },
     cssMinifier = new CleanCSS(cssOptions),
+	javaScriptObfuscator = require('javascript-obfuscator'),
 
     rootDir = process.argv[2],
     platformPath = path.join(rootDir, 'platforms'),
@@ -100,6 +101,26 @@ function compress(file, dir) {
                 successCounter++;
                 fs.writeFileSync(file, result.code, 'utf8');
                 (debug) && console.log('Optimized: ' + file);
+				
+				//javascript-obfuscator
+				// Read the file of your original JavaScript Code as text
+				fs.readFile(file, "UTF-8", function(err, data) {
+					if (err) {
+						throw err;
+					}
+
+					// Obfuscate content of the JS file
+					var obfuscationResult = javaScriptObfuscator.obfuscate(data);
+					
+					// Write the obfuscated code into a new file
+					fs.writeFile(file, obfuscationResult.getObfuscatedCode() , function(err) {
+						if(err) {
+							return console.log(err);
+						}
+					
+						(debug) && console.log('Obfuscated: ' + file);
+					});
+				});
             }
             break;
         case '.css':
